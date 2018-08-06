@@ -1,0 +1,64 @@
+﻿<Window x:Class="HavocClicks.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HavocClicks"
+        mc:Ignorable="d"
+        Title="HavocClicks" Height="545" Width="735" Icon="Resources/Havoc Toolkit.ico" MinWidth="735" MinHeight="545" ResizeMode="CanMinimize">
+    <Grid>
+        <Rectangle Height="20" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Bottom" Fill="{StaticResource ResourceKey=UniverseLinearGradientBrush}"/>
+        <Rectangle Height="60" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" Fill="{StaticResource ResourceKey=UniverseLinearGradientBrush}"/>
+        <Label x:Name="labelApplicationTitel" Content="HAVOC'S TOOLKIT:  MOUSE CLICKER" Margin="20,10,10,0" FontSize="24" Foreground="White" Height="40" VerticalAlignment="Top"/>
+        <GroupBox Header="Auto Clicker" Height="410" Margin="10,65,0,0" FontSize="16" BorderBrush="#FFD96379" Foreground="#FFD96379" VerticalAlignment="Top" HorizontalAlignment="Left" Width="230" BorderThickness="2" FontWeight="Medium">
+            <Grid>
+                <Button x:Name="buttonEnableAutoClicker" Content="Start" Margin="10,341,0,0" Width="198" Click="buttonEnableAutoClicker_Click" Height="30" Style="{StaticResource AutoClickerButton}"/>
+                <Label Content="Repeat delay (ms):" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" FontSize="13.333" Width="198" FontWeight="Normal"/>
+                <TextBox x:Name="textboxAutoClickerDelay" HorizontalAlignment="Left" Height="23" Margin="10,33,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="198" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Normal" TextChanged="textboxNumerical_TextChanged"/>
+                <TextBox Width="198" VerticalAlignment="Top" Text="10" TextWrapping="Wrap" x:Name="textboxAutoClickerPressDuration" Margin="10,89,0,0" Height="23" HorizontalAlignment="Left" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Normal" TextChanged="textboxNumerical_TextChanged"/>
+                <Label VerticalAlignment="Top" Margin="10,61,0,0" HorizontalAlignment="Left" FontSize="13.333" Content="Press duration (ms):" Width="198" FontWeight="Normal"/>
+                <Label Content="Clicked Mouse Button:" HorizontalAlignment="Left" Margin="10,117,0,0" VerticalAlignment="Top" FontSize="13.333" Width="198" FontWeight="Normal"/>
+                <ComboBox x:Name="comboboxAutoClickerClickedMouseButton" HorizontalAlignment="Left" Margin="10,145,0,0" VerticalAlignment="Top" Width="198" FontSize="12" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Normal"/>
+                <Label Content="Trigger Mouse Button:" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top" FontSize="13.333" Width="198" FontWeight="Normal"/>
+                <ComboBox x:Name="cbAutoClickerTriggerMouse" HorizontalAlignment="Left" Margin="10,248,0,0" VerticalAlignment="Top" Width="198" FontSize="12" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Normal"/>
+                <Label Content="Trigger Interface:" HorizontalAlignment="Left" Margin="10,172,0,0" VerticalAlignment="Top" FontSize="13.333" Width="198" FontWeight="Normal"/>
+                <RadioButton x:Name="rbAutoClickerTriggerMouse" Content="Mouse" HorizontalAlignment="Left" Margin="10,200,0,0" VerticalAlignment="Top" IsChecked="True" FontSize="12" FontWeight="Normal"/>
+                <RadioButton x:Name="rbAutoClickerTriggerKeyboard" Content="Keyboard" HorizontalAlignment="Left" Margin="80,200,0,0" VerticalAlignment="Top" FontSize="12" FontWeight="Normal"/>
+                <TextBox x:Name="tbAutoClickerTriggerKeyboard" HorizontalAlignment="Left" Height="23" Margin="10,303,0,0" TextWrapping="Wrap" Text="LMENU" VerticalAlignment="Top" Width="198" MouseDoubleClick="tbAutoClickerTriggerKeyboard_MouseDoubleClick" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Normal"/>
+                <Label Content="Trigger Keyboard Key:" HorizontalAlignment="Left" Margin="10,275,0,0" VerticalAlignment="Top" FontSize="13.333" Width="198" FontWeight="Normal"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Repeater" Height="410" Margin="245,65,0,0" FontSize="16" BorderBrush="#FF756CAB" Foreground="#FF756CAB" VerticalAlignment="Top" HorizontalAlignment="Left" Width="230" BorderThickness="2" FontWeight="Medium">
+            <Grid>
+                <Label Content="Repeats:" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" FontSize="13.333" Width="198" FontWeight="Normal"/>
+                <TextBox x:Name="textboxClickRepeats" HorizontalAlignment="Left" Height="23" Margin="10,33,0,0" TextWrapping="Wrap" Text="10" VerticalAlignment="Top" Width="198" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Normal" TextChanged="textboxNumerical_TextChanged"/>
+                <Label Content="Repeated Mouse Button:" HorizontalAlignment="Left" Margin="10,173,0,0" VerticalAlignment="Top" FontSize="13.333" Width="198" FontWeight="Normal"/>
+                <ComboBox x:Name="comboboxRepeaterMouseButton" HorizontalAlignment="Left" Margin="10,201,0,0" VerticalAlignment="Top" Width="198" FontSize="12" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="Normal"/>
+                <TextBox Width="198" VerticalAlignment="Top" Text="10" TextWrapping="Wrap" x:Name="textboxRepeatDelay" Margin="10,89,0,0" Height="23" HorizontalAlignment="Left" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Normal" TextChanged="textboxNumerical_TextChanged"/>
+                <Label VerticalAlignment="Top" Margin="10,61,0,0" HorizontalAlignment="Left" FontSize="13.333" Content="Repeat delay (ms):" Width="198" FontWeight="Normal"/>
+                <TextBox Width="198" VerticalAlignment="Top" Text="10" TextWrapping="Wrap" x:Name="textboxPressDuration" Margin="10,145,0,0" Height="23" HorizontalAlignment="Left" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Normal" TextChanged="textboxNumerical_TextChanged"/>
+                <Label VerticalAlignment="Top" Margin="10,117,0,0" HorizontalAlignment="Left" FontSize="13.333" Content="Press duration (ms):" Width="198" FontWeight="Normal"/>
+                <Button x:Name="buttonEnableRepeater" Content="Start" Margin="10,342,0,0" Width="198" Click="buttonEnableRepeater_Click" Height="30" Style="{StaticResource RepeaterButton}"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="HotKeys" Height="195" Margin="480,281,0,0" FontSize="16" BorderBrush="#FF2797A5" Foreground="#FF2797A5" VerticalAlignment="Top" HorizontalAlignment="Left" Width="230" BorderThickness="2" FontWeight="Medium">
+            <Grid>
+                <TextBox x:Name="textboxHotKeyRepeater" HorizontalAlignment="Left" Height="23" Margin="10,89,0,0" TextWrapping="Wrap" Text="F2" VerticalAlignment="Top" Width="198" MouseDoubleClick="textboxHotkeyRepeater_MouseDoubleClick" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Normal"/>
+                <Button x:Name="buttonEnableHotkeys" Content="Enable" Margin="10,127,0,0" Width="198" Click="buttonEnableHotkeys_Click" Height="30" Style="{StaticResource HotkeyButton}"/>
+                <Label Content="Start/Stop Repeater:" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" FontSize="13.333" Width="198" FontWeight="Normal"/>
+                <Label Content="Start/Stop Auto Clicker:" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" FontSize="13.333" Width="198" FontWeight="Normal"/>
+                <TextBox x:Name="textboxHotKeyAutoClicker" HorizontalAlignment="Left" Height="23" Margin="10,33,0,0" TextWrapping="Wrap" Text="F1" VerticalAlignment="Top" Width="198" MouseDoubleClick="textboxHotkeyAutoClicker_MouseDoubleClick" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Normal"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Statistics" Height="211" Margin="480,65,0,0" FontSize="16" BorderBrush="#FF447FB0" Foreground="#FF447FB0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="230" BorderThickness="2" FontWeight="Medium">
+            <Grid>
+                <Label Content="Clicks per second (click/s):" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" FontSize="13.333" Width="198" FontWeight="Normal"/>
+                <TextBox x:Name="tbStatisticsClicksPerSecond" HorizontalAlignment="Left" Height="23" Margin="10,33,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="198" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Normal"/>
+                <Label Content="Total clicks:" HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" FontSize="13.333" Width="198" FontWeight="Normal"/>
+                <TextBox x:Name="tbStatisticsTotalClicks" HorizontalAlignment="Left" Height="23" Margin="10,89,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="198" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Normal"/>
+                <Label Content="Total time (ms):" HorizontalAlignment="Left" Margin="10,117,0,0" VerticalAlignment="Top" FontSize="13.333" Width="198" FontWeight="Normal"/>
+                <TextBox x:Name="tbStatisticsTotalTime" HorizontalAlignment="Left" Height="23" Margin="10,145,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="198" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Normal"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
